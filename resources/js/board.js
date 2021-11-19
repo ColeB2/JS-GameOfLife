@@ -1,4 +1,4 @@
-
+import Cell from './cell.js'
 
 export class Board {
 	constructor(width=10, height=10) {
@@ -16,9 +16,43 @@ export class Board {
 			for (var i = 0; i < this.width; i++) {
 				var cell = new Cell(i, j, 50, false);
 				//50 -- cell width --> import a const for it?
-				row.push(cell)
+				row.push(cell);
 			}
-			this.board.push(row)
+			this.board.push(row);
 		}
+	}
+	
+	setCellNeighbours() {
+		this.board.forEach(function(row) {
+			row.forEach(function(cell) {
+				cell.getNeighbours(this.board);
+			})
+		})
+	}
+	
+	
+	setPrevState() {
+		this.board.forEach(function(row) {
+			row.forEach(function(cell) {
+				cell.prevState = cell.state;
+			})
+		})
+	}
+	
+	
+	nextState() {
+		this.board.forEach(function(row) {
+			row.forEach(function(cell) {
+				cell.calculateState();
+			})
+		})
+	}
+		
+	boardUpdate(canvasContext) {
+		this.board.forEach(function(row) {
+			row.forEach(function(cell) {
+				cell.draw(canvasContext);
+			});
+		});
 	}
 }
