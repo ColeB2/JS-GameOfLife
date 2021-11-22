@@ -3,7 +3,7 @@ import Board from './board.js'
 
 class Main {
 	constructor () {
-		this.board = new Board()
+		this.Board = new Board()
 		
 		
 		this.myCanvas = document.getElementById("myCanvas");
@@ -23,34 +23,34 @@ class Main {
 	}
 	
 	initializeBoard() {
-		this.board.createBoard();
-		this.board.setCellNeighbours();
+		this.Board.createBoard();
+		this.Board.setCellNeighbours();
 		
 		this.myCanvas.addEventListener('click', function(event) {
 			var x = event.pageX - this.myCanvasLeft;
 			var y = event.pageY - this.myCanvasTop;
 			
-			this.board.board.forEach(function(row) {
+			this.Board.board.forEach(function(row) {
 				row.forEach(function(cell) {
 					if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 					&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
 						cell.drawState();
 						this.myCanvasCtx.clearRect(0,0, this.myCanvas.width, this.myCanvas.height);
-						this.board.boardUpdate();
+						this.Board.boardUpdate();
 					}
 				})
 			})
 		}, false);
 	    
-		this.board.setPrevState();
-		this.board.Update(this.myCanvasCtx);
+		this.Board.setPrevState();
+		this.Board.Update(this.myCanvasCtx);
 	}
 	
 	updateGame() {
 		this.myCanvasCtx.clearRect(0,0, this.myCanvas.width, this.myCanvas.height);
-		this.board.nextState();
-		this.board.setPrevState();
-		this.board.boardUpdate(this.myCanvasCtx);
+		this.Board.nextState();
+		this.Board.setPrevState();
+		this.Board.boardUpdate(this.myCanvasCtx);
 	}
 	
 	mainLoop() {
