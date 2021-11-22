@@ -1,6 +1,3 @@
-import Board from './board.js'
-
-
 class Main {
 	constructor () {
 		this.Board = new Board()

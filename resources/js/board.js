@@ -1,6 +1,4 @@
-import Cell from './cell.js'
-
-export default class Board {
+class Board {
 	constructor(width=10, height=10) {
 		this.width = width;
 		this.height = height;
