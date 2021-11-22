@@ -187,7 +187,6 @@ function updateGame() {
 function pauseLoop() {
 	isRunning = !isRunning;
 	window.requestAnimationFrame(mainLoop);
-	console.log(isRunning)
 }
 
 function mainLoop() {
@@ -233,13 +232,11 @@ cellArray[7][8].state = true;
 cellArray[8][7].state = true;
 
 //click event:
-console.log("adding event listeners")
 myCanvas.addEventListener('click', function(event) {
 	var x = event.pageX - myCanvasLeft;
 	var y = event.pageY - myCanvasTop;
 	
 	//colision
-	console.log("before foreach loops")
 	cellArray.forEach(function(row) {
 		row.forEach(function(cell) {
 			if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
