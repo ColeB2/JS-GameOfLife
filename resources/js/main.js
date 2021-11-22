@@ -3,7 +3,7 @@ import Board from './board.js'
 
 class Main {
 	constructor () {
-		this.board = Board()
+		this.board = new Board()
 		
 		
 		this.myCanvas = document.getElementById("myCanvas");
