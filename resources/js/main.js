@@ -27,8 +27,8 @@ class Main {
 		this.board.setCellNeighbours();
 		
 		this.myCanvas.addEventListener('click', function(event) {
-			var.x = event.pageX - myCanvasLeft;
-			var.y = event.pageY - myCanvasTop;
+			var x = event.pageX - myCanvasLeft;
+			var y = event.pageY - myCanvasTop;
 			
 			this.board.board.forEach(function(row) {
 				row.forEach(function(cell) {
