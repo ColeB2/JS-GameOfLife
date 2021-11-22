@@ -26,7 +26,7 @@ class Main {
 		this.board.createBoard();
 		this.board.setCellNeighbours();
 		
-		this.myCanvas.addEventListener('click' . function(event) {
+		this.myCanvas.addEventListener('click', function(event) {
 			var.x = event.pageX - myCanvasLeft;
 			var.y = event.pageY - myCanvasTop;
 			
