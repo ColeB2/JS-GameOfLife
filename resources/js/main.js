@@ -21,15 +21,14 @@ class Main {
 	
 	initializeBoard() {
 		this.Board.createBoard();
-		console.log(this.Board)
-		console.log(this.Board.board)
 		this.Board.setCellNeighbours();
 		
+		var gameBoard = this.Board.board
 		this.myCanvas.addEventListener('click', function(event) {
 			var x = event.pageX - this.myCanvasLeft;
 			var y = event.pageY - this.myCanvasTop;
 			
-			this.Board.board.forEach(function(row) {
+			gameBoard.forEach(function(row) {
 				row.forEach(function(cell) {
 					if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 					&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
@@ -74,12 +73,26 @@ class Main {
 
 
 var mainGame = new Main();
+mainGame.initializeBoard();
+
+var isRunning = true;
+
+function mainLoop() {
+	if (isRunning) {
+		mainGame.updateGame();
+		setTimeout( function() {
+			window.requestAnimationFrame(mainGame.mainLoop);
+		}, mainGame.delay);
+	}
+}
+
 
 function pauseLoop() {
 	mainGame.isRunning = !mainGame.isRunning;
 	window.requestAnimationFrame(mainGame.mainLoop);
 }
 
-mainGame.initializeBoard();
-mainGame.runGame();
+//mainGame.runGame();
+
+
 

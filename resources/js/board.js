@@ -21,7 +21,6 @@ class Board {
 	}
 	
 	setCellNeighbours() {
-		console.log(this.board)
 		var neighbourhood_board = this.board
 		this.board.forEach(function(row) {
 			row.forEach(function(cell) {
