@@ -16,7 +16,7 @@ class Main {
 		this.cellWidth = 50;
 		
 		this.canvasWidthCellWidth = this.canvasWidth / this.cellWidth;
-		this.canvasHeightCellHeight = this.canvas.Height / this.cellWidth;
+		this.canvasHeightCellHeight = this.canvasHeight / this.cellWidth;
 		
 		this.isRunning = true;
 		this.delay = 300;	
