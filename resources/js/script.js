@@ -176,10 +176,11 @@ function boardUpdate() {
 function updateGame() {
 	//clear canvas
 	myCanvasCtx.clearRect(0,0, myCanvas.width, myCanvas.height);
-	// calc state
+	// calc state -- nextState
 	calcState();
-	//sets previous state
+	//sets previous state setPrevState
 	setPrevState();
+	//boardUpdate
 	boardUpdate();
 }
 
