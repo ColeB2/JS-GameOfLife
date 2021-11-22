@@ -21,6 +21,8 @@ class Main {
 	
 	initializeBoard() {
 		this.Board.createBoard();
+		console.log(this.Board)
+		console.log(this.Board.board)
 		this.Board.setCellNeighbours();
 		
 		this.myCanvas.addEventListener('click', function(event) {
@@ -40,7 +42,7 @@ class Main {
 		}, false);
 	    
 		this.Board.setPrevState();
-		this.Board.Update(this.myCanvasCtx);
+		this.Board.boardUpdate(this.myCanvasCtx);
 	}
 	
 	updateGame() {
@@ -61,11 +63,11 @@ class Main {
 		}
 		setPrevState();
 		initializeBoard()
-		window.requestAnimationFrame(mainLoop);
+		window.requestAnimationFrame(this.mainLoop);
 	}
 	
 	runGame() {
-		window.requestAnimationFrame(mainLoop);
+		window.requestAnimationFrame(this.mainLoop);
 	}
 }
 
