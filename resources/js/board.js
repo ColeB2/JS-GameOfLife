@@ -22,17 +22,17 @@ class Board {
 	
 	setCellNeighbours() {
 		var neighbourhood_board = this.board
-		this.board.forEach(function(row) {
-			row.forEach(function(cell) {
-				cell.getNeighbours(neighbourhood_board);
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
+				cell.getNeighbours(this.board);
 			})
 		})
 	}
 	
 	
 	setPrevState() {
-		this.board.forEach(function(row) {
-			row.forEach(function(cell) {
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
 				cell.prevState = cell.state;
 			})
 		})
@@ -40,16 +40,16 @@ class Board {
 	
 	
 	nextState() {
-		this.board.forEach(function(row) {
-			row.forEach(function(cell) {
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
 				cell.calculateState();
 			})
 		})
 	}
 		
 	boardUpdate(canvasContext) {
-		this.board.forEach(function(row) {
-			row.forEach(function(cell) {
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
 				cell.draw(canvasContext);
 			});
 		});

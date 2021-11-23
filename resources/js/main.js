@@ -24,17 +24,17 @@ class Main {
 		this.Board.setCellNeighbours();
 		
 		var gameBoard = this.Board.board
-		this.myCanvas.addEventListener('click', function(event) {
+		this.myCanvas.addEventListener('click', (event) => {
 			var x = event.pageX - this.myCanvasLeft;
 			var y = event.pageY - this.myCanvasTop;
 			
-			gameBoard.forEach(function(row) {
-				row.forEach(function(cell) {
+			gameBoard.forEach((row) => {
+				row.forEach((cell) => {
 					if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 					&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
 						cell.drawState();
 						this.myCanvasCtx.clearRect(0,0, this.myCanvas.width, this.myCanvas.height);
-						this.Board.boardUpdate();
+						this.Board.boardUpdate(this.myCanvasCtx);
 					}
 				})
 			})
@@ -54,19 +54,19 @@ class Main {
 	mainLoop() {
 		if (this.isRunning) {
 			this.updateGame();
-			setTimeout( function() {
-				window.requestAnimationFrame(this.mainLoop);
+			setTimeout( () => {
+				window.requestAnimationFrame( () => this.mainLoop);
 			}, this.delay);
 			
 			
 		}
 		setPrevState();
 		initializeBoard()
-		window.requestAnimationFrame(this.mainLoop);
+		window.requestAnimationFrame(() => this.mainLoop);
 	}
 	
 	runGame() {
-		window.requestAnimationFrame(this.mainLoop);
+		window.requestAnimationFrame(() => this.mainLoop);
 	}
 }
 
@@ -80,8 +80,8 @@ var isRunning = true;
 function mainLoop() {
 	if (isRunning) {
 		mainGame.updateGame();
-		setTimeout( function() {
-			window.requestAnimationFrame(mainGame.mainLoop);
+		setTimeout( () => {
+			window.requestAnimationFrame( () => mainGame.mainLoop);
 		}, mainGame.delay);
 	}
 }
@@ -89,10 +89,11 @@ function mainLoop() {
 
 function pauseLoop() {
 	mainGame.isRunning = !mainGame.isRunning;
-	window.requestAnimationFrame(mainGame.mainLoop);
+	window.requestAnimationFrame( () => mainGame.mainLoop);
 }
 
-//mainGame.runGame();
+console.log("runGame")
+mainGame.runGame();
 
 
 
