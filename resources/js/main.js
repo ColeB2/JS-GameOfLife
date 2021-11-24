@@ -51,22 +51,22 @@ class Main {
 		this.Board.boardUpdate(this.myCanvasCtx);
 	}
 	
-	mainLoop() {
-		if (this.isRunning) {
-			this.updateGame();
-			setTimeout( () => {
-				window.requestAnimationFrame( () => this.mainLoop);
-			}, this.delay);
-			
-			
-		}
-		setPrevState();
-		initializeBoard()
-		window.requestAnimationFrame(() => this.mainLoop);
-	}
 	
 	runGame() {
-		window.requestAnimationFrame(() => this.mainLoop);
+		var self = this
+		
+		function mainLoop() {
+			if (self.isRunning) {
+				self.updateGame();
+				setTimeout( () => {
+					window.requestAnimationFrame(mainLoop);
+				}, self.delay);
+			}
+		}
+		window.requestAnimationFrame(mainLoop)
+		
+		//this.mainLoop()
+		//window.requestAnimationFrame(() => this.mainLoop);
 	}
 }
 
@@ -75,21 +75,9 @@ class Main {
 var mainGame = new Main();
 mainGame.initializeBoard();
 
-var isRunning = true;
-
-function mainLoop() {
-	if (isRunning) {
-		mainGame.updateGame();
-		setTimeout( () => {
-			window.requestAnimationFrame( () => mainGame.mainLoop);
-		}, mainGame.delay);
-	}
-}
-
-
 function pauseLoop() {
 	mainGame.isRunning = !mainGame.isRunning;
-	window.requestAnimationFrame( () => mainGame.mainLoop);
+	mainGame.runGame()
 }
 
 console.log("runGame")
