@@ -1,5 +1,7 @@
 
-
+.hide {
+	display: none;
+}
 
 #myCanvas {
 	border: 1px solid black;

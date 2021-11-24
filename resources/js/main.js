@@ -76,8 +76,18 @@ var mainGame = new Main();
 mainGame.initializeBoard();
 
 function pauseLoop() {
+	if (mainGame.isRunning) {
+		document.getElementById('pause').innerText = 'Start';
+	} else {
+		document.getElementById('pause').innerText = 'Pause';
+	}
+	
 	mainGame.isRunning = !mainGame.isRunning;
 	mainGame.runGame()
+}
+
+function startLoop() {
+	
 }
 
 console.log("runGame")
