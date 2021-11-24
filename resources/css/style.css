@@ -3,6 +3,18 @@
 	display: none;
 }
 
+
+#canvas-container {
+	width: 100%;
+	text-align: center;
+}
+
 #myCanvas {
+	display: inline;
 	border: 1px solid black;
+}
+
+#button-container {
+	width: 100%;
+	text-align: center;
 }
