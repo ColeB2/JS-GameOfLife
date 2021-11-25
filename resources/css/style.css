@@ -12,6 +12,7 @@
 #myCanvas {
 	display: inline;
 	border: 1px solid black;
+	cursor: pointer;
 }
 
 #button-container {

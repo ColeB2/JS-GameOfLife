@@ -24,6 +24,8 @@ class Main {
 		this.Board.setCellNeighbours();
 		
 		var gameBoard = this.Board.board
+		
+		//Mouse Controls
 		this.myCanvas.addEventListener('click', (event) => {
 			var x = event.pageX - this.myCanvasLeft;
 			var y = event.pageY - this.myCanvasTop;
