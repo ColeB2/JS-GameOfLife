@@ -47,6 +47,16 @@ class Board {
 		})
 	}
 	
+	randomState() {
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
+				var randomBool = Math.random() < 0.5
+				cell.state = randomBool;
+				cell.prevState = randomBool;
+			})
+		})
+	}
+	
 	
 	nextState() {
 		this.board.forEach((row) => {
