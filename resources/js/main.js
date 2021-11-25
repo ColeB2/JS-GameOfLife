@@ -86,6 +86,12 @@ function pauseLoop() {
 	mainGame.runGame()
 }
 
+function resetBoard() {
+	document.getElementById('reset')
+	mainGame.Board.resetState()
+	mainGame.updateGame();
+}
+
 function startLoop() {
 	
 }

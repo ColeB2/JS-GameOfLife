@@ -38,6 +38,15 @@ class Board {
 		})
 	}
 	
+	resetState() {
+		this.board.forEach((row) => {
+			row.forEach((cell) => {
+				cell.state = false;
+				cell.prevState = false;
+			})
+		})
+	}
+	
 	
 	nextState() {
 		this.board.forEach((row) => {
