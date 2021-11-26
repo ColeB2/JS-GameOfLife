@@ -60,6 +60,13 @@ class Main {
 var mainGame = new Main();
 mainGame.initializeBoard();
 var pauseButton = document.getElementById('pause')
+var rangeSlider = document.getElementById('myRange');
+var output = document.getElementById('sliderValue');
+
+rangeSlider.oninput = function() {
+	output.innerHTML = this.value;
+	mainGame.delay = this.value;
+}
 
 function pauseLoop() {
 	if (mainGame.isRunning) {
