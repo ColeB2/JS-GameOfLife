@@ -2,6 +2,10 @@ h1 {
 	text-align: center;
 }
 
+body {
+	background-color: rgb(230,230,250);
+}
+
 #canvas-container {
 	width: 100%;
 	text-align: center;
