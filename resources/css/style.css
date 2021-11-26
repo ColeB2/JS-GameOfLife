@@ -36,6 +36,10 @@ body {
 	cursor: pointer;
 }
 
+.button-paused {
+	background-color: #008CBA;
+}
+
 .button:hover {
 	background-color: #008CBA;
     color: white;	

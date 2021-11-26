@@ -16,7 +16,7 @@ class Main {
 		this.canvasHeightCellHeight = this.canvasHeight / this.cellWidth;
 		
 		this.isRunning = false;
-		this.delay = 300;	
+		this.delay = DELAY;	
 	}
 	
 	initializeBoard() {
@@ -76,12 +76,15 @@ class Main {
 
 var mainGame = new Main();
 mainGame.initializeBoard();
+var pauseButton = document.getElementById('pause')
 
 function pauseLoop() {
 	if (mainGame.isRunning) {
-		document.getElementById('pause').innerText = 'Start';
+		pauseButton.innerText = 'Start';
+		pauseButton.classList.remove('button-paused')
 	} else {
-		document.getElementById('pause').innerText = 'Pause';
+		pauseButton.innerText = 'Pause';
+		pauseButton.classList.add('button-paused')
 	}
 	
 	mainGame.isRunning = !mainGame.isRunning;
