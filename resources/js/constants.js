@@ -4,7 +4,7 @@ const CANVAS_LEFT = CANVAS.offsetLeft + CANVAS.clientLeft
 const CANVAS_TOP = CANVAS.offsetTop + CANVAS.clientTop
 const CANVAS_WIDTH = CANVAS.width;
 const CANVAS_HEIGHT = CANVAS.height;
-var DELAY = 300;
+var DELAY = 100;
 
 
 var CELL_WIDTH = 25;
