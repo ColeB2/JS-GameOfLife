@@ -1,20 +1,6 @@
 class Main {
 	constructor () {
 		this.Board = new Board(BOARD_WIDTH, BOARD_HEIGHT)
-		
-		
-		this.myCanvas = document.getElementById("myCanvas");
-		this.myCanvasCtx = myCanvas.getContext('2d');
-		this.myCanvasLeft = this.myCanvas.offsetLeft + this.myCanvas.clientLeft
-		this.myCanvasTop = this.myCanvas.offsetTop + this.myCanvas.clientTop
-		
-		this.canvasWidth = this.myCanvasCtx.canvas.clientWidth;
-		this.canvasHeight = this.myCanvasCtx.canvas.clientHeight;
-		this.cellWidth = 50;
-		
-		this.canvasWidthCellWidth = this.canvasWidth / this.cellWidth;
-		this.canvasHeightCellHeight = this.canvasHeight / this.cellWidth;
-		
 		this.isRunning = false;
 		this.delay = DELAY;	
 	}
@@ -26,31 +12,31 @@ class Main {
 		var gameBoard = this.Board.board
 		
 		//Mouse Controls
-		this.myCanvas.addEventListener('click', (event) => {
-			var x = event.pageX - this.myCanvasLeft;
-			var y = event.pageY - this.myCanvasTop;
+		CANVAS.addEventListener('click', (event) => {
+			var x = event.pageX - CANVAS_LEFT;
+			var y = event.pageY - CANVAS_TOP;
 			
 			gameBoard.forEach((row) => {
 				row.forEach((cell) => {
 					if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 					&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
 						cell.drawState();
-						this.myCanvasCtx.clearRect(0,0, this.myCanvas.width, this.myCanvas.height);
-						this.Board.boardUpdate(this.myCanvasCtx);
+						CTX.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
+						this.Board.boardUpdate(CTX);
 					}
 				})
 			})
 		}, false);
 	    
 		this.Board.setPrevState();
-		this.Board.boardUpdate(this.myCanvasCtx);
+		this.Board.boardUpdate(CTX);
 	}
 	
 	updateGame() {
-		this.myCanvasCtx.clearRect(0,0, this.myCanvas.width, this.myCanvas.height);
+		CTX.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
 		this.Board.nextState();
 		this.Board.setPrevState();
-		this.Board.boardUpdate(this.myCanvasCtx);
+		this.Board.boardUpdate(CTX);
 	}
 	
 	
@@ -66,9 +52,6 @@ class Main {
 			}
 		}
 		window.requestAnimationFrame(mainLoop)
-		
-		//this.mainLoop()
-		//window.requestAnimationFrame(() => this.mainLoop);
 	}
 }
 
