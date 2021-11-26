@@ -1,6 +1,6 @@
 class Main {
 	constructor () {
-		this.Board = new Board()
+		this.Board = new Board(BOARD_WIDTH, BOARD_HEIGHT)
 		
 		
 		this.myCanvas = document.getElementById("myCanvas");

@@ -12,7 +12,7 @@ class Board {
 		for (var j = 0; j < this.height; j++) {
 			var row = [];
 			for (var i = 0; i < this.width; i++) {
-				var cell = new Cell(i, j, 50, false);
+				var cell = new Cell(i, j, CELL_WIDTH, false);
 				//50 -- cell width --> import a const for it?
 				row.push(cell);
 			}
