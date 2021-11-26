@@ -1,8 +1,6 @@
-
-.hide {
-	display: none;
+h1 {
+	text-align: center;
 }
-
 
 #canvas-container {
 	width: 100%;
