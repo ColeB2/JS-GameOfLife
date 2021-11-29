@@ -11,6 +11,11 @@ body {
 	background-color: rgb(240,240,240);
 }
 
+.footer {
+	text-align: center;
+	color: rgb(128,128,128);
+}
+
 #canvas-container {
 	width: 100%;
 	text-align: center;
