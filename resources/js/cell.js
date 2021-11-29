@@ -10,6 +10,7 @@ class Cell {
 		this.aliveNeighbours = 0;
 	}
 	
+	
 	info() {
 		console.log('Cell:')
 		console.log(this.x)
@@ -20,6 +21,7 @@ class Cell {
 		console.log(this.aliveNeighbours)
 	}
 	
+	
 	stateInfo() {
 		console.log('Cell:')
 		console.log(this.x)
@@ -29,19 +31,15 @@ class Cell {
 		console.log(this.aliveNeighbours)
 	}
 	
+	
 	draw(canvas) {
-		if (this.state) {
-			canvas.fillStyle = "#34abd3"
-		} else {
-			canvas.fillStyle = "#808080"
-		}
+		canvas.fillStyle = this.state? "#34abd3" : "#808080";
 		canvas.fillRect(this.x*this.width + 1,
 			                this.y*this.width + 1,
 							this.width-2,
 							this.width-2)
-
-			
 	}
+	
 	
 	drawState() {
 		// Used for drawing desired grid options
@@ -54,6 +52,7 @@ class Cell {
 		}
 		
 	}
+	
 	
 	getNeighbours(neighbourhood) {
 		const neighboursPosition = [-1, 0, 1];
@@ -78,6 +77,7 @@ class Cell {
 			}
 		}
 	}
+	
 	
 	checkNeighbourState() {
 		this.aliveNeighbours = 0;
