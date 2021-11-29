@@ -32,17 +32,15 @@ class Cell {
 	draw(canvas) {
 		if (this.state) {
 			canvas.fillStyle = "#34abd3"
-			canvas.fillRect(this.x*this.width + 1,
+		} else {
+			canvas.fillStyle = "#808080"
+		}
+		canvas.fillRect(this.x*this.width + 1,
 			                this.y*this.width + 1,
 							this.width-2,
 							this.width-2)
 
-		} else {
-			canvas.strokeRect(this.x*this.width + 1,
-			                  this.y*this.width + 1,
-							  this.width-2,
-							  this.width-2)
-		}	
+			
 	}
 	
 	drawState() {
