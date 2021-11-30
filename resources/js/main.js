@@ -9,12 +9,12 @@ class Main {
 		this.Board.createBoard();
 		this.Board.setCellNeighbours();
 		
-		var gameBoard = this.Board.board
+		const gameBoard = this.Board.board
 		
 		//Mouse Controls
 		CANVAS.addEventListener('click', (event) => {
-			var x = event.pageX - CANVAS_LEFT;
-			var y = event.pageY - CANVAS_TOP;
+			const x = event.pageX - CANVAS_LEFT;
+			const y = event.pageY - CANVAS_TOP;
 			
 			gameBoard.forEach((row) => {
 				row.forEach((cell) => {
@@ -41,7 +41,7 @@ class Main {
 	
 	
 	runGame() {
-		var self = this
+		const self = this
 		
 		function mainLoop() {
 			if (self.isRunning) {
@@ -57,11 +57,11 @@ class Main {
 
 
 
-var mainGame = new Main();
+const mainGame = new Main();
 mainGame.initializeBoard();
-var pauseButton = document.getElementById('pause')
-var rangeSlider = document.getElementById('myRange');
-var output = document.getElementById('sliderValue');
+const pauseButton = document.getElementById('pause')
+const rangeSlider = document.getElementById('myRange');
+const output = document.getElementById('sliderValue');
 output.innerHTML = rangeSlider.value;
 
 rangeSlider.oninput = function() {
