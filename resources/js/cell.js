@@ -33,7 +33,7 @@ class Cell {
 	
 	
 	draw(canvas) {
-		canvas.fillStyle = this.state? "#34abd3" : "#808080";
+		canvas.fillStyle = this.state? "#89FB92" : "#343A40";
 		canvas.fillRect(this.x*this.width + 1,
 			                this.y*this.width + 1,
 							this.width-2,
