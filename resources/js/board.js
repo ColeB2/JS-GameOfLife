@@ -1,4 +1,5 @@
 import {Cell} from './cell.js'
+import {CELL_WIDTH} from './constants.js'
 
 export class Board {
 	constructor(width=10, height=10) {
