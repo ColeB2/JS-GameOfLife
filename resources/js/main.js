@@ -1,4 +1,4 @@
-import GameOfLife from './gol.js'
+import {GameOfLife} from './gol.js'
 
 
 const mainGame = new GameOfLife();
