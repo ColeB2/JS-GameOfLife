@@ -28,12 +28,12 @@ function pauseLoop() {
 
 function resetBoard() {
 	document.getElementById('reset')
-	mainGame.Board.resetState()
+	mainGame.board.resetState()
 	mainGame.updateGame();
 }
 
 function randomBoard() {
-	mainGame.Board.randomState();
+	mainGame.board.randomState();
 	mainGame.updateGame();
 }
 
@@ -44,7 +44,7 @@ function startLoop() {
 console.log("runGame")
 mainGame.runGame();
 
-window. mainGame = mainGame
+window.mainGame = mainGame
 window.pauseLoop = pauseLoop
 window.resetBoard = resetBoard
 window.randomBoard = randomBoard
