@@ -1,63 +1,7 @@
-class Main {
-	constructor () {
-		this.Board = new Board(BOARD_WIDTH, BOARD_HEIGHT)
-		this.isRunning = false;
-		this.delay = DELAY;	
-	}
-	
-	initializeBoard() {
-		this.Board.createBoard();
-		this.Board.setCellNeighbours();
-		
-		const gameBoard = this.Board.board
-		
-		//Mouse Controls
-		CANVAS.addEventListener('click', (event) => {
-			const x = event.pageX - CANVAS_LEFT;
-			const y = event.pageY - CANVAS_TOP;
-			
-			gameBoard.forEach((row) => {
-				row.forEach((cell) => {
-					if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
-					&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
-						cell.drawState();
-						CTX.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
-						this.Board.boardUpdate(CTX);
-					}
-				})
-			})
-		}, false);
-	    
-		this.Board.setPrevState();
-		this.Board.boardUpdate(CTX);
-	}
-	
-	updateGame() {
-		CTX.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
-		this.Board.nextState();
-		this.Board.setPrevState();
-		this.Board.boardUpdate(CTX);
-	}
-	
-	
-	runGame() {
-		const self = this
-		
-		function mainLoop() {
-			if (self.isRunning) {
-				self.updateGame();
-				setTimeout( () => {
-					window.requestAnimationFrame(mainLoop);
-				}, self.delay);
-			}
-		}
-		window.requestAnimationFrame(mainLoop)
-	}
-}
+import GameOfLife from './gol.js'
 
 
-
-const mainGame = new Main();
+const mainGame = new GameOfLife();
 mainGame.initializeBoard();
 const pauseButton = document.getElementById('pause')
 const rangeSlider = document.getElementById('myRange');
@@ -99,6 +43,12 @@ function startLoop() {
 
 console.log("runGame")
 mainGame.runGame();
+
+window. mainGame = mainGame
+window.pauseLoop = pauseLoop
+window.resetBoard = resetBoard
+window.randomBoard = randomBoard
+window.rangeSlider = rangeSlider
 
 
 
