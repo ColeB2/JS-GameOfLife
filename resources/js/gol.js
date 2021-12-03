@@ -1,5 +1,5 @@
 import {Board} from './board.js'
-import * as cons from './constanst.js'
+import * as cons from './constants.js'
 
 
 export class GameOfLife {
