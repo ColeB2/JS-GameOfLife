@@ -42,6 +42,7 @@ function resetBoard() {
 function randomBoard() {
 	mainGame.board.randomState();
 	mainGame.updateGame();
+	console.log(mainGame.generation)
 }
 
 
