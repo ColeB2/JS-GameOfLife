@@ -3,7 +3,7 @@ import {GameOfLife} from './gol.js'
 
 const mainGame = new GameOfLife();
 mainGame.initializeBoard();
-const pauseButton = document.getElementById('pause')
+const pauseButton = document.getElementById('pause');
 
 const rangeSlider = document.getElementById('myRange');
 const output = document.getElementById('sliderValue');
