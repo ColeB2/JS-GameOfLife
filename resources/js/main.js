@@ -14,12 +14,6 @@ rangeSlider.oninput = function() {
 	mainGame.delay = this.value;
 }
 
-const generationOutput = document.getElementById("generationValue");
-generationOutput.innerHTML = mainGame.generation
-generationOutput.addEventListener("change", () => {
-	generationOutput.innerHTML = mainGame.generation
-})
-
 function pauseLoop() {
 	if (mainGame.isRunning) {
 		pauseButton.innerText = 'Start';
@@ -36,11 +30,13 @@ function pauseLoop() {
 function resetBoard() {
 	document.getElementById('reset')
 	mainGame.board.resetState()
+	mainGame.generation = 0;
 	mainGame.updateGame();
 }
 
 function randomBoard() {
 	mainGame.board.randomState();
+	mainGame.generation = 0;
 	mainGame.updateGame();
 }
 
