@@ -7,7 +7,7 @@ export class GameOfLife {
 		this.board = new Board(cons.BOARD_WIDTH, cons.BOARD_HEIGHT)
 		this.isRunning = false;
 		this.delay = cons.DELAY;
-        this.generation = 0;		
+		this.generation = 0;		
 	}
 	
 	initializeBoard() {

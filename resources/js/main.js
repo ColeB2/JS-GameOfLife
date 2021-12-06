@@ -41,8 +41,7 @@ function randomBoard() {
 	mainGame.updateGame();
 }
 
-console.log("runGame")
-mainGame.runGame();
+
 
 window.mainGame = mainGame
 window.pauseLoop = pauseLoop
@@ -51,4 +50,6 @@ window.randomBoard = randomBoard
 window.rangeSlider = rangeSlider
 
 
+console.log("runGame")
+mainGame.runGame();
 
