@@ -6,7 +6,8 @@ export class GameOfLife {
 	constructor () {
 		this.board = new Board(cons.BOARD_WIDTH, cons.BOARD_HEIGHT)
 		this.isRunning = false;
-		this.delay = cons.DELAY;	
+		this.delay = cons.DELAY;
+        this.generation = 0;		
 	}
 	
 	initializeBoard() {
@@ -32,6 +33,7 @@ export class GameOfLife {
 			})
 		}, false);
 	    
+		this.generation++;
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
