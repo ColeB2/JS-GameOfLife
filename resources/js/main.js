@@ -16,6 +16,9 @@ rangeSlider.oninput = function() {
 
 const generationOutput = document.getElementById("generationValue");
 generationOutput.innerHTML = mainGame.generation
+generationOutput.addEventListener("change", function() {
+	generationOutput.innerHTML = mainGame.generation
+})
 
 function pauseLoop() {
 	if (mainGame.isRunning) {
