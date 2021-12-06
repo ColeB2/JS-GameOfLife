@@ -1,4 +1,5 @@
 import {GameOfLife} from './gol.js'
+import {pauseLoop, resetBoard, randomBoard} from './button_functions.js'
 
 
 const mainGame = new GameOfLife();
