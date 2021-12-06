@@ -37,10 +37,6 @@ function randomBoard() {
 	mainGame.updateGame();
 }
 
-function startLoop() {
-	
-}
-
 console.log("runGame")
 mainGame.runGame();
 
