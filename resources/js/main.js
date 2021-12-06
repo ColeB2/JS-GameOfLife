@@ -16,7 +16,7 @@ rangeSlider.oninput = function() {
 
 const generationOutput = document.getElementById("generationValue");
 generationOutput.innerHTML = mainGame.generation
-generationOutput.addEventListener("change", function() {
+generationOutput.addEventListener("change", () => {
 	generationOutput.innerHTML = mainGame.generation
 })
 
