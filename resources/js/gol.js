@@ -33,7 +33,6 @@ export class GameOfLife {
 			})
 		}, false);
 	    
-		this.generation++;
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
@@ -41,6 +40,7 @@ export class GameOfLife {
 	updateGame() {
 		cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
 		this.board.nextState();
+		this.generation ++;
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
