@@ -42,7 +42,6 @@ function resetBoard() {
 function randomBoard() {
 	mainGame.board.randomState();
 	mainGame.updateGame();
-	console.log(mainGame.generation)
 }
 
 
@@ -53,7 +52,16 @@ window.resetBoard = resetBoard
 window.randomBoard = randomBoard
 window.rangeSlider = rangeSlider
 
-
 console.log("runGame")
-mainGame.runGame();
+//mainGame.runGame();
 
+function mainLoop() {
+	if mainGame.isRunning {
+		mainGame.updateGame();
+		setTimeout( () => {
+			window.requestAnimationFrame(mainLoop);
+		}, mainGame.delay);
+	}
+}
+
+window.requestAnimationFrame(mainGame.mainLoop);
