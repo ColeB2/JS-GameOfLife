@@ -61,6 +61,11 @@ body {
 }
 
 
+.generation-container {
+	width: 100%;
+	text-align: center;
+}
+
 /* SLIDER  https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
 .slidecontainer {
   width: 100%; /* Width of the outside container */
