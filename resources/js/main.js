@@ -40,6 +40,7 @@ function randomBoard() {
 	mainGame.updateGame();
 }
 
+mainGame.runGame();
 
 
 window.mainGame = mainGame
@@ -48,4 +49,4 @@ window.resetBoard = resetBoard
 window.randomBoard = randomBoard
 window.rangeSlider = rangeSlider
 
-mainGame.runGame();
+//mainGame.runGame();
