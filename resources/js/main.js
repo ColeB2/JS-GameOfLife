@@ -64,4 +64,4 @@ function mainLoop() {
 	}
 }
 
-window.requestAnimationFrame(mainGame.mainLoop);
+window.requestAnimationFrame(mainLoop);
