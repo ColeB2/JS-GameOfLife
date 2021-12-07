@@ -61,9 +61,12 @@ export class Board {
 	}
 	
 	loadState(boardState) {
+		this.resetState()
 		let i = Math.floor((this.width - boardState[0].length) / 2)
 		let j = Math.floor((this.height - boardState.length) / 2)
-		
+		console.log(boardState)
+		console.log(i)
+		console.log(j)
 		for (let y = 0; y <= boardState.length; y++) {
 			for (let x = 0; x <= boardState[y]; x ++) {
 				xCoord = i + x;
