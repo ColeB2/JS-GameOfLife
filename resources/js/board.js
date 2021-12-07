@@ -61,8 +61,8 @@ export class Board {
 	}
 	
 	loadState(boardState) {
-		i = Math.floor((this.width - boardState[0].length) / 2)
-		j = Math.floor((this.height - boardState.length) / 2)
+		let i = Math.floor((this.width - boardState[0].length) / 2)
+		let j = Math.floor((this.height - boardState.length) / 2)
 		
 		for (let y = 0; y <= boardState.length; y++) {
 			for (let x = 0; x <= boardState[y]; x ++) {
