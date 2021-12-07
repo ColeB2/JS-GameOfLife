@@ -1,4 +1,5 @@
 import {GameOfLife} from './gol.js'
+import {GALAXY} from './states.js'
 
 
 const mainGame = new GameOfLife();
@@ -36,6 +37,12 @@ function resetBoard() {
 
 function randomBoard() {
 	mainGame.board.randomState();
+	mainGame.generation = 0;
+	mainGame.updateGame();
+}
+
+function loadState() {
+	mainGame.board.loadState(GALAXY);
 	mainGame.generation = 0;
 	mainGame.updateGame();
 }
