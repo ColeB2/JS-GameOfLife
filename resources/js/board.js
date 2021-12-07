@@ -60,6 +60,21 @@ export class Board {
 		})
 	}
 	
+	loadState(boardState) {
+		i = Math.floor((this.width - boardState[0].length) / 2)
+		j = Math.floor((this.height - boardState.length) / 2)
+		
+		for (let y = 0; y <= boardState.length; y++) {
+			for (let x = 0; x <= boardState[y]; x ++) {
+				xCoord = i + x;
+				this.board[j][x].state = boardState[y][x]
+				this.board[j][x].prev_state = boardState[y][x]
+				
+			}
+		}
+		
+	}
+	
 	
 	nextState() {
 		this.board.forEach((row) => {
