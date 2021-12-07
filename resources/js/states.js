@@ -1,4 +1,4 @@
-const TOAD = [
+export const TOAD = [
     [0,0,1,0],
 	[1,0,0,1],
 	[1,0,0,1],
@@ -6,7 +6,7 @@ const TOAD = [
 	]
 	
 	
-const GALAXY = [
+export const GALAXY = [
     [1,1,1,1,1,1,0,1,1],
 	[1,1,1,1,1,1,0,1,1],
 	[0,0,0,0,0,0,0,1,1],
