@@ -67,11 +67,11 @@ export class Board {
 		console.log(boardState)
 		console.log(i)
 		console.log(j)
-		for (let y = 0; y <= boardState.length; y++) {
+		for (let y = 0; y <= boardState.length - 1 ; y++) {
 			console.log("y:")
 			console.log(y)
 			console.log("BoardState[y]", boardState[y])
-			for (let x = 0; x <= boardState[y].length; x ++) {
+			for (let x = 0; x <= boardState[y].length - 1; x ++) {
 				console.log("x")
 				console.log(x)
 				let xCoord = i + x;
