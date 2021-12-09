@@ -70,6 +70,7 @@ export class Board {
 		for (let y = 0; y <= boardState.length; y++) {
 			console.log("y:")
 			console.log(y)
+			console.log("BoardState[y]", boardState[y])
 			for (let x = 0; x <= boardState[y]; x ++) {
 				console.log("x")
 				console.log(x)
