@@ -72,11 +72,11 @@ export class Board {
 				console.log("x:",x)
 				
 				if (boardState[y][x] === 1) {
-					this.board[j+y][i+x].state = true
-					this.board[j+y][i+x].prevState = true
+					this.board[y][x].state = true
+					this.board[y][x].prevState = true
 				} else {
-					this.board[j+y][i+x].state = false
-					this.board[j+y][i+x].prevState = false
+					this.board[y][x].state = false
+					this.board[y][x].prevState = false
 				}
 				
 				console.log(this.board)
