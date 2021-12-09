@@ -70,6 +70,7 @@ export class Board {
 			for (let x = 0; x <= boardState[y].length - 1; x ++) {
 				console.log("i", i)
 				console.log("x:",x)
+				console.log(boardState[y][x])
 				
 				if (boardState[y][x] === 1) {
 					this.board[y][x].state = true
