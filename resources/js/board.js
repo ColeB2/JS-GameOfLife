@@ -65,10 +65,10 @@ export class Board {
 		let i = Math.floor((this.width - boardState[0].length) / 2)
 		let j = Math.floor((this.height - boardState.length) / 2)
 		for (let y = 0; y <= boardState.length - 1 ; y++) {
-			console.log("j, y", j, y)
+			console.log("j, y", (j, y)_)
 			for (let x = 0; x <= boardState[y].length - 1; x ++) {
 				let xCoord = i + x;
-				console.log("i, x, xCoord:" i, x, xCoord)
+				console.log("i, x, xCoord:" (i, x, xCoord))
 				
 				if (boardState[y][x] == 1) {
 					this.board[j][xCoord].state = true
