@@ -72,6 +72,8 @@ export class Board {
 				xCoord = i + x;
 				this.board[j][x].state = boardState[y][x]
 				this.board[j][x].prev_state = boardState[y][x]
+				console.log(this.board[j][x])
+				console.log(boardState[y][x])
 				
 			}
 		}
