@@ -71,7 +71,7 @@ export class Board {
 			console.log("y:")
 			console.log(y)
 			console.log("BoardState[y]", boardState[y])
-			for (let x = 0; x <= boardState[y]; x ++) {
+			for (let x = 0; x <= boardState[y].length; x ++) {
 				console.log("x")
 				console.log(x)
 				xCoord = i + x;
