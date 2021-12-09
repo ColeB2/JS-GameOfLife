@@ -64,17 +64,12 @@ export class Board {
 		this.resetState()
 		let i = Math.floor((this.width - boardState[0].length) / 2)
 		let j = Math.floor((this.height - boardState.length) / 2)
-		console.log(boardState)
-		console.log(i)
-		console.log(j)
 		for (let y = 0; y <= boardState.length - 1 ; y++) {
-			console.log("y:")
-			console.log(y)
-			console.log("BoardState[y]", boardState[y])
+			console.log("j, y", j, y)
 			for (let x = 0; x <= boardState[y].length - 1; x ++) {
-				console.log("x")
-				console.log(x)
 				let xCoord = i + x;
+				console.log("i, x, xCoord:" i, x, xCoord)
+				
 				if (boardState[y][x] == 1) {
 					this.board[j][xCoord].state = true
 				    this.board[j][xCoord].prevState = true
@@ -83,8 +78,8 @@ export class Board {
 				    this.board[j][xCoord].prevState = false
 				}
 				
-				console.log(this.board[j][xCoord])
-				console.log(boardState[y][x])
+				console.log(this.board)
+				console.log(boardState)
 				
 			}
 		}
