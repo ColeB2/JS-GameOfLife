@@ -67,18 +67,19 @@ export class Board {
 		for (let y = 0; y <= boardState.length - 1 ; y++) {
 			console.log("j:", j)
 			console.log("y:", y)
+			console.log("j + y:" j+y)
 			for (let x = 0; x <= boardState[y].length - 1; x ++) {
 				let xCoord = i + x;
 				console.log("i", i)
 				console.log("x:" ,x)
-				console.log("xCoord:", xCoord)
+				console.log("i+x:", i+x)
 				
-				if (boardState[y][x] == 1) {
-					this.board[j+y][xCoord].state = true
-				    this.board[j+y][xCoord].prevState = true
+				if (boardState[y][x] === 1) {
+					this.board[j+y][i+x].state = true
+				    this.board[j+y][i+x].prevState = true
 				} else {
-					this.board[j+y][xCoord].state = false
-				    this.board[j+y][xCoord].prevState = false
+					this.board[j+y][i+x].state = false
+				    this.board[j+y][i+x].prevState = false
 				}
 				
 				console.log(this.board)
