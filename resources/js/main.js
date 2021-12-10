@@ -48,7 +48,7 @@ loadableBoardStates = {
 	"galaxy": GALAXY,
 }
 
-function loadState(boardState) {
+window.loadState = function(boardState) {
 	mainGame.board.loadState(loadableBoardStates[boardState]);
 	mainGame.generation = 0;
 	mainGame.updateCounter();
