@@ -43,8 +43,8 @@ function randomBoard() {
 	mainGame.updateVisuals();
 }
 
-function loadState() {
-	mainGame.board.loadState(GALAXY);
+function loadState(boardState) {
+	mainGame.board.loadState(boardState);
 	mainGame.generation = 0;
 	mainGame.updateCounter();
 	mainGame.updateVisuals();
