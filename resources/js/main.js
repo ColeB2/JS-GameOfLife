@@ -4,6 +4,11 @@ import {TOAD, GALAXY} from './states.js'
 
 const mainGame = new GameOfLife();
 mainGame.initializeBoard();
+
+const loadableBoardStates = {
+	"toad": TOAD,
+	"galaxy": GALAXY,
+}
 const pauseButton = document.getElementById('pause');
 
 const rangeSlider = document.getElementById('myRange');
@@ -43,12 +48,9 @@ function randomBoard() {
 	mainGame.updateVisuals();
 }
 
-loadableBoardStates = {
-	"toad": TOAD,
-	"galaxy": GALAXY,
-}
 
-window.loadState = function(boardState) {
+
+function loadState(boardState) {
 	mainGame.board.loadState(loadableBoardStates[boardState]);
 	mainGame.generation = 0;
 	mainGame.updateCounter();
@@ -60,7 +62,7 @@ window.mainGame = mainGame
 window.pauseLoop = pauseLoop
 window.resetBoard = resetBoard
 window.randomBoard = randomBoard
-//window.loadState = loadState
+window.loadState = loadState
 window.rangeSlider = rangeSlider
 
 mainGame.runGame();
