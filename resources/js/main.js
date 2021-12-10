@@ -60,7 +60,7 @@ window.mainGame = mainGame
 window.pauseLoop = pauseLoop
 window.resetBoard = resetBoard
 window.randomBoard = randomBoard
-window.loadState = loadState
+//window.loadState = loadState
 window.rangeSlider = rangeSlider
 
 mainGame.runGame();
