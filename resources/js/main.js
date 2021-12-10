@@ -1,5 +1,5 @@
 import {GameOfLife} from './gol.js'
-import {GALAXY} from './states.js'
+import {TOAD, GALAXY} from './states.js'
 
 
 const mainGame = new GameOfLife();
@@ -43,8 +43,13 @@ function randomBoard() {
 	mainGame.updateVisuals();
 }
 
+loadableBoardStates = {
+	"toad": TOAD,
+	"galaxy": GALAXY,
+}
+
 function loadState(boardState) {
-	mainGame.board.loadState(boardState);
+	mainGame.board.loadState(loadableBoardStates[boardState]);
 	mainGame.generation = 0;
 	mainGame.updateCounter();
 	mainGame.updateVisuals();
