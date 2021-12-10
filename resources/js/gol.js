@@ -37,13 +37,21 @@ export class GameOfLife {
 		this.board.boardUpdate(cons.CTX);
 	}
 	
-	updateGame() {
-		cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
+	updateLogic() {
 		this.board.nextState();
+		this.board.setPrevState();
 		this.generation ++;
 		this.updateCounter();
-		this.board.setPrevState();
+	}
+	
+	updateVisuals(){
+		cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
 		this.board.boardUpdate(cons.CTX);
+	}
+	
+	updateGame() {
+		this.updateLogic();
+		this.updateVisuals();
 	}
 	
 	updateCounter() {
