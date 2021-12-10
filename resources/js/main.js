@@ -32,19 +32,19 @@ function resetBoard() {
 	document.getElementById('reset')
 	mainGame.board.resetState()
 	mainGame.generation = 0;
-	mainGame.updateGame();
+	mainGame.updateVisuals();
 }
 
 function randomBoard() {
 	mainGame.board.randomState();
 	mainGame.generation = 0;
-	mainGame.updateGame();
+	mainGame.updateVisuals();
 }
 
 function loadState() {
 	mainGame.board.loadState(GALAXY);
 	mainGame.generation = 0;
-	mainGame.updateGame();
+	mainGame.updateVisuals();
 }
 
 
