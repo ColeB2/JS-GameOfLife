@@ -91,7 +91,7 @@ export class GameOfLife {
 		//Mouse Controls
 		this.mouseClick(gameBoard);
 		//this.mouseDownMouseMove(gameBoard);
-		this.mouseMoveWhilstDown(mouseMoveFunction(gameBoard))
+		this.mouseMoveWhilstDown(this.mouseMoveFunction(gameBoard))
 		
 		
 		
