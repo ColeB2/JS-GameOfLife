@@ -93,9 +93,6 @@ export class GameOfLife {
 		//this.mouseDownMouseMove(gameBoard);
 		this.mouseMoveWhilstDown(this.mouseMoveFunction(gameBoard))
 		
-		
-		
-	    
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
