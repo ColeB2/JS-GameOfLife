@@ -11,7 +11,7 @@ export class GameOfLife {
 	}
 	
 	//Mouse Functions:
-	mouseClick() {
+	mouseClick(gameBoard) {
 		cons.CANVAS.addEventListener('click', (event) => {
 			const x = event.pageX - cons.CANVAS_LEFT;
 			const y = event.pageY - cons.CANVAS_TOP;
@@ -37,7 +37,7 @@ export class GameOfLife {
 		const gameBoard = this.board.board
 		
 		//Mouse Controls
-		this.mouseClick();
+		this.mouseClick(gameBoard);
 		
 		
 		cons.CANVAS.addEventListener('mousedown', (event) => {
