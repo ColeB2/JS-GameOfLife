@@ -30,6 +30,7 @@ export class GameOfLife {
 		
 	}
 	
+	
 	mouseDownMouseMove(gameBoard) {
 		cons.CANVAS.addEventListener('mousedown', (event) => {
 			cons.CANVAS.addEventListener('mousemove', (event) => {
@@ -52,6 +53,35 @@ export class GameOfLife {
 		}, false);
 	}
 	
+	mouseMoveFunction(gameBoard) {
+		const xx = event.pageX - cons.CANVAS_LEFT;
+		const yy = event.pageY - cons.CANVAS_TOP;
+		gameBoard.forEach((row) => {
+			row.forEach((cell) => {
+				if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
+				&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width) {
+					cell.drawState();
+					cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
+					this.board.boardUpdate(cons.CTX);
+				}
+			})
+		})
+	}
+	
+	
+	mouseMoveWhilstDown(whileMove) {
+		var endMove = function() {
+			cons.CANVAS.removeEventListener('mousemove', whileMove);
+			cons.CANVAS.removeEventListener('mouseup', endMove);
+		}
+		
+		cons.CANVAS.addEventListener('mousedown', (event) => {
+			event.stopPropagation();
+			cons.CANVAS.addEventListener('mousemove', whileMove);
+			cons.CANVAS.addEventListener('mouseup', endMove);
+		})
+	}
+	
 	initializeBoard() {
 		this.board.createBoard();
 		this.board.setCellNeighbours();
@@ -60,7 +90,8 @@ export class GameOfLife {
 		
 		//Mouse Controls
 		this.mouseClick(gameBoard);
-		this.mouseDownMouseMove(gameBoard);
+		//this.mouseDownMouseMove(gameBoard);
+		this.mouseMoveWhilstDown(mouseMoveFunction(gameBoard))
 		
 		
 		
