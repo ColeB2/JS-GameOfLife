@@ -34,7 +34,7 @@ export class GameOfLife {
 		}, false);
 		
 		cons.CANVAS.addEventListener('mousedown', (event) => {
-			cons.CANVAS.addEventListener('mousemove' (eve) -> {
+			cons.CANVAS.addEventListener('mousemove' (eve) => {
 				const xx = event.pageX - cons.CANVAS_LEFT;
 				const yy = event.pageY - cons.CANVAS_TOP;
 				
