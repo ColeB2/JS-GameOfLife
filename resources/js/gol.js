@@ -10,13 +10,8 @@ export class GameOfLife {
 		this.generation = 0;		
 	}
 	
-	initializeBoard() {
-		this.board.createBoard();
-		this.board.setCellNeighbours();
-		
-		const gameBoard = this.board.board
-		
-		//Mouse Controls
+	//Mouse Functions:
+	mouseClick() {
 		cons.CANVAS.addEventListener('click', (event) => {
 			const x = event.pageX - cons.CANVAS_LEFT;
 			const y = event.pageY - cons.CANVAS_TOP;
@@ -32,6 +27,18 @@ export class GameOfLife {
 				})
 			})
 		}, false);
+		
+	}
+	
+	initializeBoard() {
+		this.board.createBoard();
+		this.board.setCellNeighbours();
+		
+		const gameBoard = this.board.board
+		
+		//Mouse Controls
+		this.mouseClick();
+		
 		
 		cons.CANVAS.addEventListener('mousedown', (event) => {
 			cons.CANVAS.addEventListener('mousemove', (event) => {
