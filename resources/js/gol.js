@@ -34,19 +34,23 @@ export class GameOfLife {
 		}, false);
 		
 		cons.CANVAS.addEventListener('mousedown', (event) => {
-			const xx = event.pageX - cons.CANVAS_LEFT;
-			const yy = event.pageY - cons.CANVAS_TOP;
-			
-			gameBoard.forEach((row) => {
-				row.forEach((cell) => {
-					if (yy > cell.y*cell.width && yy < cell.y*cell.width + cell.width
-					&& xx > cell.x*cell.width && xx < cell.x*cell.width + cell.width) {
-						cell.drawState();
-						cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
-						this.board.boardUpdate(cons.CTX);
-					}
+			cons.CANVAS.addEventListener('mousemove' (eve) -> {
+				const xx = event.pageX - cons.CANVAS_LEFT;
+				const yy = event.pageY - cons.CANVAS_TOP;
+				
+				gameBoard.forEach((row) => {
+					row.forEach((cell) => {
+						if (yy > cell.y*cell.width && yy < cell.y*cell.width + cell.width
+						&& xx > cell.x*cell.width && xx < cell.x*cell.width + cell.width) {
+							cell.drawState();
+							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
+							this.board.boardUpdate(cons.CTX);
+						}
+					})
 				})
-			})
+				
+			},false);
+			
 		}, false);
 	    
 		this.board.setPrevState();
