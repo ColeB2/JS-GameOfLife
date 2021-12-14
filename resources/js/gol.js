@@ -105,12 +105,13 @@ export class GameOfLife {
 						if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 						&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width
 						&& this.lastChange != cell) {
-							this.lastChange = cell
-							console.log(this.lastChange)
-							console.log(cell)
 							console.log(this.lastChange === cell)
 							console.log(this.lastChange == cell)
 							console.log(Object.is(this.lastChange, cell))
+							this.lastChange = cell
+							console.log(this.lastChange)
+							console.log(cell)
+							
 							cell.drawState();
 							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
 							this.board.boardUpdate(cons.CTX);
