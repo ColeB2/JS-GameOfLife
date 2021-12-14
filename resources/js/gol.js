@@ -93,8 +93,8 @@ export class GameOfLife {
 		//this.mouseDownMouseMove(gameBoard);
 		this.mouseMoveWhilstDown(
 		    (event) => {
-				const xx = event.pageX - cons.CANVAS_LEFT;
-				const yy = event.pageY - cons.CANVAS_TOP;
+				const x = event.pageX - cons.CANVAS_LEFT;
+				const y = event.pageY - cons.CANVAS_TOP;
 				gameBoard.forEach((row) => {
 					row.forEach((cell) => {
 						if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
