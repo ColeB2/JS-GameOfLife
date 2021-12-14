@@ -93,6 +93,7 @@ export class GameOfLife {
 		//this.mouseDownMouseMove(gameBoard);
 		
 		console.log(event)
+		console.log(window.event)
 		this.mouseMoveWhilstDown(
 		    (event) => {
 				let lastChange = None
