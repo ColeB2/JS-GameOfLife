@@ -91,6 +91,8 @@ export class GameOfLife {
 		//Mouse Controls
 		this.mouseClick(gameBoard);
 		//this.mouseDownMouseMove(gameBoard);
+		
+		console.log(event)
 		this.mouseMoveWhilstDown(
 		    (event) => {
 				const x = event.pageX - cons.CANVAS_LEFT;
