@@ -7,7 +7,8 @@ export class GameOfLife {
 		this.board = new Board(cons.BOARD_WIDTH, cons.BOARD_HEIGHT)
 		this.isRunning = false;
 		this.delay = cons.DELAY;
-		this.generation = 0;		
+		this.generation = 0;
+		this.lastChange = null;
 	}
 	
 	//Mouse Functions:
@@ -96,17 +97,16 @@ export class GameOfLife {
 		console.log(window.event)
 		this.mouseMoveWhilstDown(
 		    (event) => {
-				let lastChange = null
+				this.lastChange null
 				const x = event.pageX - cons.CANVAS_LEFT;
 				const y = event.pageY - cons.CANVAS_TOP;
 				gameBoard.forEach((row) => {
 					row.forEach((cell) => {
 						if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 						&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width
-						&& lastChange != cell) {
-							console.log(lastChange)
-							let lastChange = cell
-							console.log(lastChange)
+						&& this.lastChange != cell) {
+							this.lastChange = cell
+							console.log(this.lastChange)
 							console.log(cell)
 							cell.drawState();
 							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
