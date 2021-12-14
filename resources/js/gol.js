@@ -104,7 +104,7 @@ export class GameOfLife {
 						if (y > cell.y*cell.width && y < cell.y*cell.width + cell.width
 						&& x > cell.x*cell.width && x < cell.x*cell.width + cell.width
 						&& lastChange != cell) {
-							lastChange = cell
+							let lastChange = cell
 							console.log(lastChange)
 							console.log(cell)
 							cell.drawState();
