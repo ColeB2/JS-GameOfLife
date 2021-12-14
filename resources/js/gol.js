@@ -113,6 +113,7 @@ export class GameOfLife {
 							this.lastChange = cell
 							console.log(this.lastChange)
 							console.log(cell)
+							console.log(this.lastChange === cell)
 							
 							cell.drawState();
 							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
