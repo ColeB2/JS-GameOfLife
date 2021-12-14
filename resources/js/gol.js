@@ -96,7 +96,7 @@ export class GameOfLife {
 		console.log(window.event)
 		this.mouseMoveWhilstDown(
 		    (event) => {
-				let lastChange = None
+				let lastChange = null
 				const x = event.pageX - cons.CANVAS_LEFT;
 				const y = event.pageY - cons.CANVAS_TOP;
 				gameBoard.forEach((row) => {
