@@ -99,7 +99,8 @@ export class GameOfLife {
 		
 		console.log(event)
 		console.log(window.event)
-		this.mouseMoveWhilstDown(
+		this.mouseMoveWhilstDown((event)=> mouseMoveFunction(gameBoard))
+		/* this.mouseMoveWhilstDown(
 		    (event) => {
 				const x = event.pageX - cons.CANVAS_LEFT;
 				const y = event.pageY - cons.CANVAS_TOP;
@@ -117,7 +118,7 @@ export class GameOfLife {
 						}
 					})
 				})
-			})
+			}) */
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
