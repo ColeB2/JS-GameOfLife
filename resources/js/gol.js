@@ -99,7 +99,7 @@ export class GameOfLife {
 		
 		console.log(event)
 		console.log(window.event)
-		this.mouseMoveWhilstDown((event)=> mouseMoveFunction(gameBoard))
+		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
 		/* this.mouseMoveWhilstDown(
 		    (event) => {
 				const x = event.pageX - cons.CANVAS_LEFT;
