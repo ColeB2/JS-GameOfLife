@@ -100,25 +100,6 @@ export class GameOfLife {
 		console.log(event)
 		console.log(window.event)
 		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
-		/* this.mouseMoveWhilstDown(
-		    (event) => {
-				const x = event.pageX - cons.CANVAS_LEFT;
-				const y = event.pageY - cons.CANVAS_TOP;
-				gameBoard.forEach((row) => {
-					row.forEach((cell) => {
-						if (y > cell.y*cell.width
-						    && y < cell.y*cell.width + cell.width
-						    && x > cell.x*cell.width
-						    && x < cell.x*cell.width + cell.width
-						    && this.lastChange != cell) {
-							    this.lastChange = cell
-							    cell.drawState();
-							    cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
-							    this.board.boardUpdate(cons.CTX);
-						}
-					})
-				})
-			}) */
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
