@@ -66,12 +66,6 @@ const loadableBoardStates = {
 	"galaxy": GALAXY,
 }
 
-function loadState(boardState) {
-	mainGame.board.loadState(loadableBoardStates[boardState]);
-	mainGame.generation = 0;
-	mainGame.updateCounter();
-	mainGame.updateVisuals();
-}
 
 function handleLoad() {
 	mainGame.board.loadState(loadableBoardStates[this.id]);
@@ -92,6 +86,4 @@ for (let i = 0; i <= loadButtons.length; i++) {
 
 
 window.mainGame = mainGame
-window.loadState = loadState
-
 mainGame.runGame();
