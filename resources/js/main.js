@@ -7,17 +7,6 @@ mainGame.initializeBoard();
 const pauseButton = document.getElementById('pause');
 
 
-
-
-const rangeSlider = document.getElementById('myRange');
-const output = document.getElementById('sliderValue');
-output.innerHTML = rangeSlider.value;
-
-rangeSlider.oninput = function() {
-	output.innerHTML = this.value;
-	mainGame.delay = this.value;
-}
-
 function gameDelay() {
 	delayOutput.innerHTML = this.value;
 	mainGame.delay = this.value;	
