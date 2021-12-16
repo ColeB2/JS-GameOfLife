@@ -35,13 +35,17 @@ function pauseLoop() {
 const pauseButton = document.getElementById('pause')
 pauseButton.addEventListener('click', pauseLoop, false)
 
+
+//Reset Button
 function resetBoard() {
-	document.getElementById('reset')
 	mainGame.board.resetState()
 	mainGame.generation = 0;
 	mainGame.updateCounter();
 	mainGame.updateVisuals();
 }
+
+const resetButton = document.getElementById('reset')
+resetButton.addEventListener('click', resetBoard, false)
 
 function randomBoard() {
 	mainGame.board.randomState();
