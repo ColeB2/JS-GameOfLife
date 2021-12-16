@@ -5,7 +5,8 @@ import {TOAD, GALAXY} from './states.js'
 const mainGame = new GameOfLife();
 mainGame.initializeBoard();
 const pauseButton = document.getElementById('pause');
-const delayRange = document.getElementById('delayRange');
+
+
 const delayOutput = document.getElementById('delayValue');
 delayOutput.innerHTML = delayRange.value;
 
@@ -19,10 +20,12 @@ rangeSlider.oninput = function() {
 }
 
 function gameDelay() {
-	output.innerHTML = this.value;
-	mainGame.delay = this.value;
-	
+	delayOutput.innerHTML = this.value;
+	mainGame.delay = this.value;	
 }
+
+const delayRange = document.getElementById('delayRange');
+delayRange.addEventListener('input', gameDelay, false)
 
 function pauseLoop() {
 	if (mainGame.isRunning) {
