@@ -81,7 +81,7 @@ function handleLoad() {
 }
 
 const loadButtons = document.querySelectorAll('.load')
-for (let i = 0; i <= loadButtons.length, i++) {
+for (let i = 0; i <= loadButtons.length; i++) {
 	loadButtons[i].addEventListener('click', handleLoad, false)
 }
 
