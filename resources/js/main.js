@@ -71,5 +71,6 @@ window.resetBoard = resetBoard
 window.randomBoard = randomBoard
 window.loadState = loadState
 window.rangeSlider = rangeSlider
+window.gameDelay = gameDelay
 
 mainGame.runGame();
