@@ -7,8 +7,7 @@ mainGame.initializeBoard();
 const pauseButton = document.getElementById('pause');
 
 
-const delayOutput = document.getElementById('delayValue');
-delayOutput.innerHTML = delayRange.value;
+
 
 const rangeSlider = document.getElementById('myRange');
 const output = document.getElementById('sliderValue');
@@ -25,6 +24,8 @@ function gameDelay() {
 }
 
 const delayRange = document.getElementById('delayRange');
+const delayOutput = document.getElementById('delayValue');
+delayOutput.innerHTML = delayRange.value;
 delayRange.addEventListener('input', gameDelay, false)
 
 function pauseLoop() {
