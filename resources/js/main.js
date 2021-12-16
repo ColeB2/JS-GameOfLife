@@ -47,8 +47,21 @@ function resetBoard() {
 const resetButton = document.getElementById('reset')
 resetButton.addEventListener('click', resetBoard, false)
 
+
+//Random Board Button
 function randomBoard() {
 	mainGame.board.randomState();
+	mainGame.generation = 0;
+	mainGame.updateCounter();
+	mainGame.updateVisuals();
+}
+
+const randomButton = document.getElementById('random')
+randomButton.addEventListener('click', randomBoard, false)
+
+
+function loadState(boardState) {
+	mainGame.board.loadState(loadableBoardStates[boardState]);
 	mainGame.generation = 0;
 	mainGame.updateCounter();
 	mainGame.updateVisuals();
@@ -59,18 +72,10 @@ const loadableBoardStates = {
 	"galaxy": GALAXY,
 }
 
-function loadState(boardState) {
-	mainGame.board.loadState(loadableBoardStates[boardState]);
-	mainGame.generation = 0;
-	mainGame.updateCounter();
-	mainGame.updateVisuals();
-}
+
 
 
 window.mainGame = mainGame
-window.randomBoard = randomBoard
 window.loadState = loadState
-window.rangeSlider = rangeSlider
-window.gameDelay = gameDelay
 
 mainGame.runGame();
