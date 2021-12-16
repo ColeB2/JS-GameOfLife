@@ -60,6 +60,12 @@ const randomButton = document.getElementById('random')
 randomButton.addEventListener('click', randomBoard, false)
 
 
+//Load State Button
+const loadableBoardStates = {
+	"toad": TOAD,
+	"galaxy": GALAXY,
+}
+
 function loadState(boardState) {
 	mainGame.board.loadState(loadableBoardStates[boardState]);
 	mainGame.generation = 0;
@@ -67,10 +73,19 @@ function loadState(boardState) {
 	mainGame.updateVisuals();
 }
 
-const loadableBoardStates = {
-	"toad": TOAD,
-	"galaxy": GALAXY,
+function handleLoad() {
+	mainGame.board.loadState(loadableBoardStates[this.id]);
+	mainGame.generation = 0;
+	mainGame.updateCounter();
+	mainGame.updateVisuals();
 }
+
+const loadButtons = document.querySelectorAll('.load')
+for (let i = 0; i <= loadButtons.length, i++) {
+	loadButtons[i].addEventListener('click', handleLoad, false)
+}
+
+
 
 
 
