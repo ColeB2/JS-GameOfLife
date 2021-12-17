@@ -1,5 +1,5 @@
 import {GameOfLife} from './gol.js'
-import {TOAD, GALAXY} from './states.js'
+import {BLINKER, GALAXY, PULSAR, TOAD} from './states.js'
 
 
 const mainGame = new GameOfLife();
