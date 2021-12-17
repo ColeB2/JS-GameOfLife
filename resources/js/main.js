@@ -65,6 +65,7 @@ const loadableBoardStates = {
 	"toad": TOAD,
 	"galaxy": GALAXY,
 	"blinker": BLINKER,
+	"pulsar": PULSAR,
 }
 
 
