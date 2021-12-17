@@ -64,6 +64,7 @@ randomButton.addEventListener('click', randomBoard, false)
 const loadableBoardStates = {
 	"toad": TOAD,
 	"galaxy": GALAXY,
+	"blinker": BLINKER,
 }
 
 
