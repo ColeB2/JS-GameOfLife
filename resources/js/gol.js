@@ -95,10 +95,6 @@ export class GameOfLife {
 		
 		//Mouse Controls
 		this.mouseClick(gameBoard);
-		//this.mouseDownMouseMove(gameBoard);
-		
-		console.log(event)
-		console.log(window.event)
 		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
