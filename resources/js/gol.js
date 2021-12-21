@@ -64,26 +64,37 @@ export class GameOfLife {
 		})
 	}
 	
-	touchHandler(event, gameBoard) {
-		if (event.touches) {
-			const x = event.touches[0].pageX - cons.CANVAS_LEFT;
-			const y = event.touches[0].pageY - cons.CANVAS_TOP;
+	touchHandler(whileMove);
+	var endMove = function() {
+			cons.CANVAS.removeEventListener('touchmove', whileMove);
+			cons.CANVAS.removeEventListener('touchend', endMove);
+		}
+		
+		cons.CANVAS.addEventListener('touchstart', (event) => {
+			event.stopPropagation();
+			cons.CANVAS.addEventListener('touchmove', whileMove);
+			cons.CANVAS.addEventListener('touchend', endMove);
+		})
+	
+	
+	touchMove(gameBoard) {
+		const x = event.touches[0].pageX - cons.CANVAS_LEFT;
+		const y = event.touches[0].pageY - cons.CANVAS_TOP;
 			
-			gameBoard.forEach((row) => {
-				row.forEach((cell) => {
-					if (y > cell.y*cell.width
-						&& y < cell.y*cell.width + cell.width
-						&& x > cell.x*cell.width
-						&& x < cell.x*cell.width + cell.width
-						&& this.lastChange != cell) {
-							this.lastChange = cell
-							cell.drawState();
-							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
-							this.board.boardUpdate(cons.CTX);
-						}
-				})
+		gameBoard.forEach((row) => {
+			row.forEach((cell) => {
+				if (y > cell.y*cell.width
+					&& y < cell.y*cell.width + cell.width
+					&& x > cell.x*cell.width
+					&& x < cell.x*cell.width + cell.width
+					&& this.lastChange != cell) {
+						this.lastChange = cell
+						cell.drawState();
+						cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
+						this.board.boardUpdate(cons.CTX);
+					}
 			})
-		}	
+		})	
 	}
 	
 	
@@ -96,8 +107,7 @@ export class GameOfLife {
 		//Mouse Controls
 		this.mouseClick(gameBoard);
 		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
-		cons.CANVAS.addEventListener("touchstart", this.touchHandler, false)
-		cons.CANVAS.addEventListener("touchmove", this.touchHandler, false)
+		this.touchHandler((event) => this.touchmove(gameBoard))
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
