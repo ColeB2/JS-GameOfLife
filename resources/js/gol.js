@@ -108,7 +108,7 @@ export class GameOfLife {
 		//Mouse Controls
 		this.mouseClick(gameBoard);
 		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
-		this.touchHandler((event) => this.touchmove(gameBoard))
+		this.touchHandler((event) => this.touchMove(gameBoard))
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
