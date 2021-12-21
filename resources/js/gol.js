@@ -64,8 +64,8 @@ export class GameOfLife {
 		})
 	}
 	
-	touchHandler(whileMove);
-	var endMove = function() {
+	touchHandler(whileMove) {
+		var endMove = function() {
 			cons.CANVAS.removeEventListener('touchmove', whileMove);
 			cons.CANVAS.removeEventListener('touchend', endMove);
 		}
@@ -75,6 +75,7 @@ export class GameOfLife {
 			cons.CANVAS.addEventListener('touchmove', whileMove);
 			cons.CANVAS.addEventListener('touchend', endMove);
 		})
+	}
 	
 	
 	touchMove(gameBoard) {
