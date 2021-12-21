@@ -31,29 +31,6 @@ export class GameOfLife {
 		
 	}
 	
-	
-	mouseDownMouseMove(gameBoard) {
-		cons.CANVAS.addEventListener('mousedown', (event) => {
-			cons.CANVAS.addEventListener('mousemove', (event) => {
-				const xx = event.pageX - cons.CANVAS_LEFT;
-				const yy = event.pageY - cons.CANVAS_TOP;
-				
-				gameBoard.forEach((row) => {
-					row.forEach((cell) => {
-						if (yy > cell.y*cell.width && yy < cell.y*cell.width + cell.width
-						&& xx > cell.x*cell.width && xx < cell.x*cell.width + cell.width) {
-							cell.drawState();
-							cons.CTX.clearRect(0,0, cons.CANVAS_WIDTH, cons.CANVAS_HEIGHT);
-							this.board.boardUpdate(cons.CTX);
-						}
-					})
-				})
-				
-			},false);
-			
-		}, false);
-	}
-	
 	mouseMoveFunction(gameBoard) {
 		const x = event.pageX - cons.CANVAS_LEFT;
 		const y = event.pageY - cons.CANVAS_TOP;
@@ -87,9 +64,11 @@ export class GameOfLife {
 		})
 	}
 	
-	touchMoveFunction() {
-		const x = event.pageX - cons.CANVAS_LEFT;
-		const y = event.pageY - cons.CANVAS_TOP;
+	touchHandler(event, gameBoard) {
+		if (event.touches) {
+			const x = event.touches[0].pageX - cons.CANVAS_LEFT;
+			const y = event.touches[0].pageY - cons.CANVAS_TOP;
+			
 			gameBoard.forEach((row) => {
 				row.forEach((cell) => {
 					if (y > cell.y*cell.width
@@ -104,7 +83,7 @@ export class GameOfLife {
 						}
 				})
 			})
-		
+		}	
 	}
 	
 	
@@ -117,8 +96,8 @@ export class GameOfLife {
 		//Mouse Controls
 		this.mouseClick(gameBoard);
 		this.mouseMoveWhilstDown((event) => this.mouseMoveFunction(gameBoard))
-		cons.CANVAS.addEventListener("touchstart", this.touchMoveFunction, false)
-		cons.CANVAS.addEventListener("touchmove", this.touchMoveFunction, false)
+		cons.CANVAS.addEventListener("touchstart", this.touchHandler, false)
+		cons.CANVAS.addEventListener("touchmove", this.touchHandler, false)
 		this.board.setPrevState();
 		this.board.boardUpdate(cons.CTX);
 	}
