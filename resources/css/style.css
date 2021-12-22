@@ -29,6 +29,7 @@ body {
 #myCanvas {
 	display: inline;
 	cursor: pointer;
+	width: 100%;
 }
 
 #button-container {
