@@ -27,7 +27,7 @@ body {
 }
 
 #myCanvas {
-	display: block;
+	display: inline;
 	cursor: pointer;
 }
 
