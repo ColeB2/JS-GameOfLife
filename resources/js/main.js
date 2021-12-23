@@ -83,8 +83,5 @@ for (let i = 0; i < loadButtons.length; i++) {
 
 
 
-
-
-
 window.mainGame = mainGame
 mainGame.runGame();
