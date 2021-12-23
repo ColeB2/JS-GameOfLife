@@ -72,7 +72,7 @@ export class GameOfLife {
 		
 		cons.CANVAS.addEventListener('touchstart', (event) => {
 			if (event.target == cons.CANVAS) {
-				event.preevntDefault();
+				event.preventDefault();
 			}
 			event.stopPropagation();
 			cons.CANVAS.addEventListener('touchmove', whileMove);
